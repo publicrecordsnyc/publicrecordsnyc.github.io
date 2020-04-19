@@ -126,8 +126,8 @@ socket.on("userCount", function(usercount) {
 });
 
 function fetchSchedule() {
-  fetch("https://pa-test.nfshost.com/")
-  // fetch("http://localhost:3000/")
+  // fetch("https://pa-test.nfshost.com/")
+  fetch("http://localhost:3000/")
     .then(data => {
       return data.json();
     })
@@ -231,6 +231,8 @@ function findCurrentAndNextShow(events) {
       isLive = false;
       nowPlaying.innerHTML = `<span>OFF AIR</span>`;
       nowPlayingMobile.innerHTML = `<span>OFF AIR</span>`;
+      desktopTipButton.classList.add('hidden');
+      mobileTipButton.classList.add('hidden');
     }
   }
 }
