@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<!-- TODO: https://gist.github.com/johnpolacek/3827270 -->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+
+    <title>Public Records</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css?family=VT323&display=swap"
+      rel="stylesheet"
+    />
+    <link href="blah.css" rel="stylesheet" />
+    <link rel="icon" 
+      type="image/png" 
+      href="favicon.png">
+  </head>
+  <body>
+    <div id="text-spoofer">
+      &nbsp;
+    </div>
+    <div id="panel-spoofer">
+      d
+    </div>
+    <!-- mobile header -->
+    <div class="mobile-header">
+      <div class="flex-grid">
+        <div class="col col1">
+          <div>
+            PUBLIC ACCESS<br>
+            C/O PUBLIC RECORDS<br>
+            & ALRIGHT STUDIO
+          </div>
+        </div>
+        <div class="col col3">
+          <div id="mobile-desktop-time"></div>
+          <div>
+            <span id="now-mobile"></span>
+            <br />
+            <span id="next-mobile"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- regular header -->
+    <div class="header">
+      <div class="flex-grid">
+        <div class="col col1 desktop-col-1">
+          <div>
+            PUBLIC ACCESS
+          </div>
+        </div>
+        <div class="col col2" id="now">
+          <!-- <div id="now"></div> -->
+        </div>
+        <div class="col col3">
+          <a href="https://publicrecords.nyc" target="new">
+            <img src="top-right-logo.gif" id="header-logo" />
+          </a>
+        </div>
+      </div>
+    </div>
+    <div id="stream-container">
+      <iframe
+        id="stream"
+        src="https://livestream.com/accounts/29263203/events/9057537/player?enableInfoAndActivity=false&defaultDrawer=&autoPlay=true&mute=false"
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+      ></iframe>
+      <div id="desktop-placeholder" class="placeholder hidden">
+        <!-- <img class="placeholder-logo" src="logo.png" /> -->
+      </div>
+    </div>
+    <div id="mobile-stream-container">
+      <div class="count-holder mobile-count"><span id="mobile-user-count"></span> Currently Watching</div>
+
+      <iframe
+        id="mobile-stream"
+        class="hidden"
+        src="https://livestream.com/accounts/29263203/events/9057537/player?enableInfoAndActivity=false&defaultDrawer=&autoPlay=true&mute=false"
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+      ></iframe>
+      <div id="mobile-placeholder" class="placeholder hidden">
+        <!-- <img class="placeholder-logo" src="logo.png" /> -->
+      </div>
+    </div>
+    <!-- regular footer -->
+
+    <div class="footer">
+      <div class="panel" id="about-panel">
+        <p>
+            BROUGHT TO YOU BY PUBLIC RECORDS, PUBLIC ACCESS IS A COMMUNITY BROADCASTING PLATFORM BUILT TO SERVE AS A MEANS FOR COMMUNICATION AND EXPRESSION IN RESPONSE TO THE CURRENT STATE OF THE WORLD.  OUR GOAL IS TO SHOWCASE DIVERSE, INSPIRING PROGRAMMING AND TO PROVIDE OTHERS WITH AN OUTLET TO EXPERIMENT AND CREATE. PLEASE EXCUSE OCCASIONAL OBSCURITIES AND FREQUENT TECHNICAL DIFFICULTIES.
+        </p>
+        <br>
+        <p>
+            PUBLIC ACCESS WAS DESIGNED AND DEVELOPED IN COLLABORATION WITH ALRIGHT STUDIO AND BUILT BY CONAN LAI WITH ADDITIONAL PRODUCTION SUPPORT BY VIRTUALLY REAL.
+        </p>
+        <br />
+        <p>
+            SIGN UP TO STAY TUNED:<br />
+          <!-- Begin Mailchimp Signup Form -->
+          <link href="//cdn-images.mailchimp.com/embedcode/slim-10_7.css" rel="stylesheet" type="text/css">
+          <style type="text/css">
+            #mc_embed_signup{clear:left; }
+            /* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
+              We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+          </style>
+          <div>
+          <form action="https://whiteboxcollective.us12.list-manage.com/subscribe/post?u=ebc5c8d60953d76e1109082cd&amp;id=5913e40cb4" method="post" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+              <div>
+            
+            <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="YOUR@EMAIL.ADDRESS" required>
+              <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+              <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_ebc5c8d60953d76e1109082cd_5913e40cb4" tabindex="-1" value=""></div>
+              <input type="submit" value="SUBMIT" name="subscribe" class="button no-bg">
+              </div>
+          </form>
+          </div>
+          <!--End mc_embed_signup-->
+        </p>
+      </div>
+      <div class="panel" id="schedule-panel">
+        <!-- schedule panel -->
+      </div>
+      <div class="count-holder"><span id="desktop-user-count"></span> CURRENTLY WATCHING</div>
+
+      <div class="footer-buttons">
+        <div class="footer-left">
+          <div class="buttons buttons-left">
+            <div class="button" id="about-button">
+              ABOUT
+            </div>
+            <div class="button" id="schedule-button">
+              SCHEDULE
+            </div>
+            <!-- <div class="button">
+              <a href="https://publicrecords.store" target="new">
+                STORE
+              </a>
+            </div> -->
+            <div class="button">
+              <a
+                href="https://www.discogs.com/seller/publicrecordsnyc/profile"
+                target="new"
+              >
+                DISCOGS
+              </a>
+            </div>
+            <div class="button">
+              <a href="https://www.instagram.com/publicrecordsnyc" target="new">
+                INSTAGRAM
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-center">
+          <marquee>
+            <a href="mailto:publicaccess@publicrecords.nyc" target="_top">
+              CLICK NOW TOLL FREE 1-800-2-PUBLIC
+            </a>
+          </marquee>
+        </div>
+        <div class="footer-right">
+          <div class="buttons buttons-right">
+            <div class="button hidden" id="desktop-tip-button">
+              <a href="" id="desktop-tip-link" target="new">
+                TIP JAR
+              </a>
+            </div>
+            <div class="button">
+              <a href="https://www.patreon.com/publicrecordsnyc" target="new">
+                SUPPORT PR
+              </a>
+            </div>
+            <div class="button" id="chat-button">
+              < CHAT
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- mobile footer -->
+    <div class="mobile-footer">
+      <div class="flex-grid mobile-topper">
+      <div class="button mobile-button">
+          <a href="https://www.patreon.com/publicrecordsnyc" target="new">
+            SUPPORT PR
+          </a>
+        </div>
+        <div class="button mobile-button hidden" id="mobile-tip-button">
+          <a href="" id="mobile-tip-link" target="new">
+            TIP JAR
+          </a>
+        </div>
+        <div class="button mobile-button" id="mobile-chat-button">
+          < CHAT
+        </div>
+
+      </div>
+      <div class="flex-grid mobile-buttons">
+
+        <div class="button mobile-button">
+          <a id="mobile-about-button" target="new">
+            ABOUT
+          </a>
+        </div>
+        <!-- <div class="button mobile-button">
+          <a href="https://publicrecords.store" target="new">
+            STORE
+          </a>
+        </div> -->
+        <div class="button mobile-button">
+          <a
+            href="https://www.discogs.com/seller/publicrecordsnyc/profile"
+            target="new"
+          >
+            DISCOGS
+          </a>
+        </div>
+        <div class="button mobile-button">
+          <a href="https://www.instagram.com/publicrecordsnyc" target="new">
+            INSTAGRAM
+          </a>
+        </div>
+        </div>
+        <div class="mobile-panel">
+          <div id="mobile-about" class="hidden">
+              <p>
+                  BROUGHT TO YOU BY PUBLIC RECORDS, PUBLIC ACCESS IS A COMMUNITY BROADCASTING PLATFORM BUILT TO SERVE AS A MEANS FOR COMMUNICATION AND EXPRESSION IN RESPONSE TO THE CURRENT STATE OF THE WORLD.  OUR GOAL IS TO SHOWCASE DIVERSE, INSPIRING PROGRAMMING AND TO PROVIDE OTHERS WITH AN OUTLET TO EXPERIMENT AND CREATE. PLEASE EXCUSE OCCASIONAL OBSCURITIES AND FREQUENT TECHNICAL DIFFICULTIES.
+              </p>
+              <br>
+              <p>
+                  PUBLIC ACCESS WAS DESIGNED AND DEVELOPED IN COLLABORATION WITH ALRIGHT STUDIO AND BUILT BY CONAN LAI WITH ADDITIONAL PRODUCTION SUPPORT BY VIRTUALLY REAL.
+              </p>
+              <br>
+              <p>
+                SIGN UP TO STAY TUNED:<br />
+                <!-- Begin Mailchimp Signup Form -->
+                <link href="//cdn-images.mailchimp.com/embedcode/slim-10_7.css" rel="stylesheet" type="text/css">
+                <style type="text/css">
+                  #mc_embed_signup{clear:left; }
+                  /* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
+                    We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+                </style>
+                <div>
+                <form action="https://whiteboxcollective.us12.list-manage.com/subscribe/post?u=ebc5c8d60953d76e1109082cd&amp;id=5913e40cb4" method="post" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                    <div>
+                  
+                  <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="YOUR@EMAIL.ADDRESS" required>
+                    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_ebc5c8d60953d76e1109082cd_5913e40cb4" tabindex="-1" value=""></div>
+                    <input type="submit" value="SUBMIT" name="subscribe" class="button no-bg">
+                    </div>
+                </form>
+                </div>
+        
+                <!--End mc_embed_signup-->
+              </p>
+            </div>
+            <!-- end mobile about -->
+            <div id="mobile-schedule-panel">
+
+            </div>
+        </div>
+      
+        <!-- <img src="mobile-logo.png" id="mobile-logo-footer" /> -->
+      
+    </div>
+    </div>
+    <div class="mobile-footer-footer">
+      <img src="mobile-logo.png" id="mobile-footer-logo" />
+      <br><br>
+      <marquee>
+        <a href="mailto:publicaccess@publicrecords.nyc" target="_top">
+          CLICK NOW TOLL FREE 1-800-2-PUBLIC
+        </a>
+      </marquee>
+    </div>
+    <div id="chat-window" class="chat-hidden">
+      <script
+        id="cid0020000245740937065"
+        data-cfasync="false"
+        async
+        src="https://st.chatango.com/js/gz/emb.js"
+        style="width: 100%;height: 100%;"
+      >
+        {"handle":"public-access-test","arch":"js","styles":{"a":"000000","b":100,"c":"FFFFFF","d":"FFFFFF","k":"000000","l":"000000","m":"000000","n":"FFFFFF","p":"10","q":"000000","r":100,"fwtickm":1}}
+      </script>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.3/moment.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.15/lodash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+    <script src="moment.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
