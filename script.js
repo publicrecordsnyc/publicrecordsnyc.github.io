@@ -213,11 +213,11 @@ function findCurrentAndNextShow(events) {
       nowPlayingMobile.innerHTML = `<div class="on-air">ON AIR:</div>&nbsp;<div>${currentShowName}</div>`;
 
       // check for tip jar
-      if (liveShow.description) {
+      if (liveShow.location) {
         desktopTipButton.classList.remove('hidden');
         mobileTipButton.classList.remove('hidden');
-        desktopTipLink.href = liveShow.description;
-        mobileTipLink.href = liveShow.description;
+        desktopTipLink.href = liveShow.location;
+        mobileTipLink.href = liveShow.location;
       } else {
         desktopTipButton.classList.add('hidden');
         mobileTipButton.classList.add('hidden');
