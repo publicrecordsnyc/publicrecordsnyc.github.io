@@ -126,8 +126,9 @@ socket.on("userCount", function(usercount) {
 });
 
 function fetchSchedule() {
-  fetch("https://pa-test.nfshost.com/")
+  // fetch("https://pa-test.nfshost.com/")
   // fetch("http://localhost:3000/")
+  fetch("https://public-access-backend.herokuapp.com/")
     .then(data => {
       return data.json();
     })
