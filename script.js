@@ -126,8 +126,8 @@ socket.on("userCount", function(usercount) {
 });
 
 function fetchSchedule() {
-  // fetch("https://pa-test.nfshost.com/")
-  fetch("http://localhost:3000/")
+  fetch("https://pa-test.nfshost.com/")
+  // fetch("http://localhost:3000/")
     .then(data => {
       return data.json();
     })
