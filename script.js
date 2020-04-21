@@ -210,7 +210,7 @@ function findCurrentAndNextShow(events) {
     if (currentShowName !== liveShow.summary.toUpperCase()) {
       currentShowName = liveShow.summary.toUpperCase();
       nowPlaying.innerHTML = `<div class="on-air">ON AIR:</div>&nbsp;<div class="now-playing-desktop">${currentShowName}</div>`;
-      nowPlayingMobile.innerHTML = `<div class="on-air">ON AIR:</div>&nbsp;<div>${currentShowName}</div>`;
+      nowPlayingMobile.innerHTML = `<div class="on-air">ON AIR:</div><div>${currentShowName}</div>`;
 
       // check for tip jar
       if (liveShow.location) {
