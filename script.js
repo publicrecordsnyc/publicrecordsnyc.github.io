@@ -323,10 +323,11 @@ function compileDesktopSchedule(events) {
     const { date, shows } = dateObj;
     const firstShow = shows.shift();
     try {
+      const numberOfDots = charactersForFirstColumn - date.length - 2;
       const firstShowString =
         date +
         " " +
-        ".".repeat(charactersForFirstColumn - date.length - 2) +
+        ".".repeat(numberOfDots) +
         " " +
         firstShow +
         "<br>";
@@ -336,9 +337,9 @@ function compileDesktopSchedule(events) {
           charactersForFirstColumn
         )}${show}<br>`;
       });
-    } catch (e) {}
+    } catch (e) {
+    }
   });
-
   schedulePanel.innerHTML = finalFormatting;
 }
 
