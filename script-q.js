@@ -118,7 +118,7 @@ mobileChatButton.addEventListener("click", () => {
 const mobileUsercount = document.querySelector("#mobile-user-count");
 const desktopUsercount = document.querySelector("#desktop-user-count");
 
-const socket = io("https://pa-test.nfshost.com/");
+const socket = io("https://public-access-backend.herokuapp.com/");
 
 socket.on("userCount", function(usercount) {
   mobileUsercount.innerHTML = String(usercount);
