@@ -317,9 +317,9 @@ function compileDesktopSchedule(events) {
   let finalFormatting = "";
 
   initialFormatting.forEach((dateObj, i) => {
-    if (i !== 0) {
-      finalFormatting += "<br><br>";
-    }
+    // if (i !== 0) {
+    //   finalFormatting += "";
+    // }
     const { date, shows } = dateObj;
     const firstShow = shows.shift();
     try {
