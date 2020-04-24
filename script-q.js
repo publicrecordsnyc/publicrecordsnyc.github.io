@@ -121,7 +121,7 @@ const desktopUsercount = document.querySelector("#desktop-user-count");
 const socket = io("https://public-access-backend.herokuapp.com/");
 
 socket.on("userCount", function(usercount) {
-  mobileUsercount.innerHTML = String(usercount);
+  // mobileUsercount.innerHTML = String(usercount);
   desktopUsercount.innerHTML = String(usercount);
 });
 
