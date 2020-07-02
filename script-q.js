@@ -118,16 +118,16 @@
   const mobileUsercount = document.querySelector("#mobile-user-count");
   const desktopUsercount = document.querySelector("#desktop-user-count");
 
-  // const socket = io("https://public-access-backend.herokuapp.com/");
+  const socket = io("https://public-access-backend.herokuapp.com/");
 
   // socket.on('connect', () => {
   //   console.log('hi');
   // });
 
-  // socket.on("userCount", function(usercount) {
-    // mobileUsercount.innerHTML = String(usercount);
-    // desktopUsercount.innerHTML = String(usercount);
-  // });
+  socket.on("userCount", function(usercount) {
+    mobileUsercount.innerHTML = String(usercount);
+    desktopUsercount.innerHTML = String(usercount);
+  });
 
   function fetchSchedule() {
     // fetch("https://pa-test.nfshost.com/")
