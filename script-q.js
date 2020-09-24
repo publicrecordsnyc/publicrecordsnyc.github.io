@@ -1,4 +1,5 @@
 // about
+
 (function() {
   const aboutButton = document.querySelector("#about-button");
   const aboutPanel = document.querySelector("#about-panel");
