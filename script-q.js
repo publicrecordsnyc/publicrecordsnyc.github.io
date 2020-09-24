@@ -1,16 +1,11 @@
-// about
 (function() {
+  // selectors
   const aboutButton = document.querySelector("#about-button");
   const aboutPanel = document.querySelector("#about-panel");
 
-  let aboutOpen = false;
-
   const mobileAboutButton = document.querySelector("#mobile-about-button");
   const mobileAboutPanel = document.querySelector("#mobile-about");
-  let mobileAboutOpen = false;
 
-  let isLive = null;
-  let currentShowName = '';
 
   const nowPlaying = document.querySelector("#now");
   const nowPlayingMobile = document.querySelector("#now-mobile");
@@ -22,7 +17,6 @@
   const textSpoofer = document.querySelector("#text-spoofer");
   const panelSpoofer = document.querySelector("#panel-spoofer");
 
-  let charactersInPanel = 0;
 
   const scheduleButton = document.querySelector("#schedule-button");
   const schedulePanel = document.querySelector("#schedule-panel");
@@ -34,11 +28,33 @@
   const mobileTipButton = document.querySelector("#mobile-tip-button");
   const mobileTipLink = document.querySelector("#mobile-tip-link");
 
+  const chatButton = document.querySelector("#chat-button");
+  const mobileChatButton = document.querySelector("#mobile-chat-button");
+  const chatWindow = document.querySelector("#chat-window");
+
+  const mobileUsercount = document.querySelector("#mobile-user-count");
+  const desktopUsercount = document.querySelector("#desktop-user-count");
+
+  // state
+  let aboutOpen = false;
+  let mobileAboutOpen = false;
+
+  let isLive = null;
+  let currentShowName = '';
+
+  let charactersInPanel = 0;
+
   let scheduleOpen = false;
 
   let scheduleEvents = [];
 
   let marqueed = false;
+
+  let chatOpen = false;
+
+  let mobile = true;
+
+  // about
 
   aboutButton.addEventListener("click", () => {
     if (!aboutOpen) {
@@ -68,7 +84,6 @@
 
   // schedule
 
-
   scheduleButton.addEventListener("click", () => {
     if (!scheduleOpen) {
       scheduleButton.classList.add("button-active");
@@ -82,12 +97,6 @@
   });
 
   // chat
-
-  const chatButton = document.querySelector("#chat-button");
-  const mobileChatButton = document.querySelector("#mobile-chat-button");
-  const chatWindow = document.querySelector("#chat-window");
-
-  let chatOpen = false;
 
   chatButton.addEventListener("click", () => {
     if (!chatOpen) {
@@ -115,8 +124,7 @@
     }
   });
 
-  const mobileUsercount = document.querySelector("#mobile-user-count");
-  const desktopUsercount = document.querySelector("#desktop-user-count");
+  // this can be commented / uncommented out to enable usercount - can comment out elements in index.html
 
   // const socket = io("https://public-access-backend.herokuapp.com/");
 
@@ -130,8 +138,6 @@
   // });
 
   function fetchSchedule() {
-    // fetch("https://pa-test.nfshost.com/")
-    // fetch("http://localhost:3000/")
     fetch("https://public-access-backend.herokuapp.com/")
       .then(data => {
         return data.json();
@@ -155,8 +161,8 @@
 
   calculateCharactersInPanel();
 
-  // TODO: add some sort of hash to backend
   fetchSchedule();
+
   setInterval(fetchSchedule, 5000);
 
   function debouncedResizeHandler() {
@@ -165,9 +171,8 @@
     compileSchedule(scheduleEvents);
   }
 
-  let mobile = true;
-
   function handleStreamAdderOrRemover() {
+    // this prevents having two stream elements on page at same time
     const bodyWidth = document.querySelector('body').clientWidth;
     if (bodyWidth >= 950) {
       if (mobile === true) {
@@ -243,7 +248,7 @@
   }
 
   function calculateCharactersInPanel() {
-    // TODO: move the calc stuff outside this func and run it on window resize
+    // this uses element width to calculate # of characters needed to fill schedule
     const panelStyle = window.getComputedStyle(panelSpoofer, null);
     const panelPadding = Number(panelStyle.paddingLeft.replace("px", ""));
     const panelWidth =
@@ -321,9 +326,6 @@
     let finalFormatting = "";
 
     initialFormatting.forEach((dateObj, i) => {
-      // if (i !== 0) {
-      //   finalFormatting += "";
-      // }
       const { date, shows } = dateObj;
       const firstShow = shows.shift();
       try {
