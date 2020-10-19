@@ -222,15 +222,17 @@
         nowPlayingMobile.innerHTML = `<div class="on-air">ON AIR:</div><div>${currentShowName}</div>`;
 
         // check for tip jar
-        if (liveShow.location) {
-          desktopTipButton.classList.remove('hidden');
-          mobileTipButton.classList.remove('hidden');
-          desktopTipLink.href = liveShow.location;
-          mobileTipLink.href = liveShow.location;
-        } else {
-          desktopTipButton.classList.add('hidden');
-          mobileTipButton.classList.add('hidden');
-        }
+        //// removing this functionality as tip jar should be always on now 
+        
+        // if (liveShow.location) {
+        //   desktopTipButton.classList.remove('hidden');
+        //   mobileTipButton.classList.remove('hidden');
+        //   desktopTipLink.href = liveShow.location;
+        //   mobileTipLink.href = liveShow.location;
+        // } else {
+        //   desktopTipButton.classList.add('hidden');
+        //   mobileTipButton.classList.add('hidden');
+        // }
       }
     } else {
       if (isLive !== false) {
@@ -241,8 +243,8 @@
         isLive = false;
         nowPlaying.innerHTML = `<span>OFF AIR</span>`;
         nowPlayingMobile.innerHTML = `<span>OFF AIR</span>`;
-        desktopTipButton.classList.add('hidden');
-        mobileTipButton.classList.add('hidden');
+        // desktopTipButton.classList.add('hidden');
+        // mobileTipButton.classList.add('hidden');
       }
     }
   }

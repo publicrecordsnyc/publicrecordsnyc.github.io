@@ -565,6 +565,6 @@ a {
 
 @media screen and (max-device-width: 950px) {
   .mobile-topper {
-    display: none;
+    /* display: none; */
   }
 }
